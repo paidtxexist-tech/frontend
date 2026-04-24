@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
 import './App.css';
+import ProtectedRoute from './components/ProtectedRoute';
+import Navbar from './components/Navbar';
+import HomePage from './pages/homepage';
+import LoginPage from './pages/loginpage';
+import RegisterPage from './pages/registerpage';
+import CheckoutPage from './pages/checkoutpage';
+import DashboardPage from './pages/dashboardpage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/checkout/:planId" element={
+              <ProtectedRoute><CheckoutPage /></ProtectedRoute>
+            } />
+            <Route path="/dashboard" element={
+              <ProtectedRoute><DashboardPage /></ProtectedRoute>
+            } />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
   );
 }
-
 export default App;
