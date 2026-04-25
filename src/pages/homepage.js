@@ -23,7 +23,7 @@ const HomePage = () => {
                         <h2>{plan.name}</h2>
                         <p style={{ color: '#666', margin: '0.8rem 0' }}>{plan.description}</p>
                         <p style={{ fontSize: '1.4rem', fontWeight: '600' }}>${plan.price}</p>
-                        <p>{plan.duration_days} дней</p>
+                        <p>{plan.duration} дней</p>
                         <Link to={`/checkout/${plan.id}`}>
                             <button style={{ width: '100%', marginTop: '1rem' }}>Выбрать</button>
                         </Link>

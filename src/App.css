@@ -25,9 +25,64 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.card:hover {
-  transform: translateY(-3px);
+
+/*.card:hover {*/
+/*  transform: translateY(-3px);*/
+/*  box-shadow: 0 8px 20px rgba(0,0,0,0.08);*/
+/*}*/
+
+/* карточка подписки */
+.subscription-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subscription-card:hover {
+  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ключ */
+
+
+/* модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  min-width: 320px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.modal-key {
+  font-family: monospace;
+  font-size: 1.2rem;
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 10px;
+  word-break: break-all;
+  margin: 1.5rem 0;
 }
 
 /* кнопки */
@@ -46,6 +101,41 @@ button:hover, .btn:hover {
   background: #4338ca;
 }
 
+/* крестик */
+.close-btn {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+.close-btn:hover {
+  color: #000;
+}
+
+/* кнопка копирования */
+.copy-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: background 0.2s;
+}
+.copy-btn:hover {
+  background: #4338ca;
+}
+
 /* ключ */
 .vpn-key {
   font-family: monospace;
@@ -53,6 +143,21 @@ button:hover, .btn:hover {
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   display: inline-block;
+}
+
+.key-preview {
+  font-family: monospace;
+  background: #f1f5f9;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-block;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+.key-preview:hover {
+  background: #e2e8f0;
 }
 
 /* ввод */
@@ -95,6 +200,7 @@ input {
   font-weight: 500;
 }
 
+/* выход */
 .logout-btn {
   background: none;
   border: none;
