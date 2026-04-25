@@ -46,6 +46,15 @@ button:hover, .btn:hover {
   background: #4338ca;
 }
 
+/* ключ */
+.vpn-key {
+  font-family: monospace;
+  background: #f1f5f9;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
 /* ввод */
 input {
   padding: 0.6rem;

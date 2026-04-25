@@ -28,6 +28,11 @@ const DashboardPage = () => {
                     <div key={sub.id}>
                         <strong>{sub.plan.name}</strong>
                         <p>до {new Date(sub.end_date).toLocaleDateString()}</p>
+                        {sub.vpn_key && (
+                            <p className="vpn-key">
+                                КЛЮЧ: {sub.vpn_key}
+                            </p>
+                        )}
                     </div>
                 )) : <p>Нет активных подписок</p>}
             </div>
